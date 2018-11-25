@@ -11,13 +11,9 @@ MeCounter = 0
 MyCounter = 0
 MineCounter = 0
 ThirdPersonCounter = 0
-ProfanityCounter = 0
-Unique_Word_Counter = 0
 
-unique_words = []
-           
 for x in range(len(artists)):
-    artist = api.search_artist(artists[x], max_songs=3)
+    artist = api.search_artist(artists[x])
     for songs in artist.songs:
         lyrics_special = TextBlob(songs.lyrics)
         wordList = lyrics_special.words
@@ -44,16 +40,14 @@ for x in range(len(artists)):
     print("My: {}".format(MyCounter))
     print("Mine: {}".format(MineCounter))
     print("Third Person Reference: {}".format(ThirdPersonCounter))
-    print("Profanity: {}".format(ProfanityCounter))
     print("Percentage of egotistical words: {:.2f}%".format(percentageEgo))
-    print("Number of unique words: {}".format(Unique_Word_Counter))
     WordCounter = 0
     ICounter = 0
     MeCounter = 0
     MyCounter = 0
     MineCounter = 0
     ThirdPersonCounter = 0
-    ProfanityCounter = 0
+ 
     Unique_Word_Counter = 0
     unique_words = []
 
